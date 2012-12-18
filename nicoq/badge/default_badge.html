@@ -33,6 +33,10 @@ var requiredRevision = 115;		// This is Flash Player 9 Update 3
 </head>
 <body bgcolor="#ffffff">
 
+
+<h1>nicoq</h1>
+
+
 <script src="AC_RunActiveContent.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -40,7 +44,7 @@ var requiredRevision = 115;		// This is Flash Player 9 Update 3
 var hasReqestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
 
 // Check to see if the version meets the requirements for playback
-if (hasReqestedVersion) {
+if (hasReqestedVersion && navigator.userAgent.toLowerCase().indexOf("chrome") <= 0) {
 	// if we've detected an acceptable version
 	// embed the Flash Content SWF when all tests are passed
 
@@ -60,7 +64,7 @@ if (hasReqestedVersion) {
 		'movie','badge' ); //end AC code
 
 } else {  // Flash Player is too old or we can't detect the plugin
-	document.write('<table id="AIRDownloadMessageTable"><tr><td>Download <a href="myapp.air">My Application</a> now.<br /><br /><span id="AIRDownloadMessageRuntime">This application requires the <a href="');
+	document.write('<table id="AIRDownloadMessageTable"><tr><td>Download <span style="font-size:24pt;font-family:Meiryo, sans-serif;font-weight:bold;"><a href="http://dry.qrone.org/nicoq/badge/nicoq.air">nicoq</a></span> now.<br /><br /><span id="AIRDownloadMessageRuntime">This application requires the <a href="');
 	
 	var platform = 'unknown';
 	if (typeof(window.navigator.platform) != undefined)
@@ -84,15 +88,6 @@ if (hasReqestedVersion) {
 }
 // -->
 </script>
-<noscript>
-<table id="AIRDownloadMessageTable">
-<tr>
-	<td>
-	Download <a href="myapp.air">My Application</a> now.<br /><br /><span id="AIRDownloadMessageRuntime">This application requires Adobe&#174;&nbsp;AIR&#8482; to be installed for <a href="http://airdownload.adobe.com/air/mac/download/latest/AdobeAIR.dmg">Mac OS</a> or <a href="http://airdownload.adobe.com/air/win/download/latest/AdobeAIRInstaller.exe">Windows</a>.</span>
-	</td>
-</tr>
-</table>
-</noscript>
 
 </body>
 </html>
